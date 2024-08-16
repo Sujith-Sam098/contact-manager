@@ -73,9 +73,7 @@ class ContactRepositoryTest {
         @Test
         @DisplayName("Find contact by id throws exception")
         void findContactByIdThrowsException() {
-            var ex = assertThrows(ContactNotFoundException.class, () -> {
-                repository.findById(1);
-            });
+            var ex = assertThrows(ContactNotFoundException.class, () -> repository.findById(1));
             assertEquals("Contact with id 1 not found", ex.getMessage(),
                     "Exception message should be 'Contact not found'");
         }
@@ -91,9 +89,7 @@ class ContactRepositoryTest {
         @Test
         @DisplayName("Find contact by phone number throws exception")
         void findContactByPhoneNumberThrowsException() {
-            var ex = assertThrows(ContactNotFoundException.class, () -> {
-                repository.findByPhoneNumber("1234567890");
-            });
+            var ex = assertThrows(ContactNotFoundException.class, () -> repository.findByPhoneNumber("1234567890"));
             assertEquals("Contact not found", ex.getMessage(),
                     "Exception message should be 'Contact not found'");
         }
@@ -109,9 +105,7 @@ class ContactRepositoryTest {
         @Test
         @DisplayName("Find contact by name throws exception")
         void findContactByNameThrowsException() {
-            var ex = assertThrows(ContactNotFoundException.class, () -> {
-                repository.findByName("Ashish");
-            });
+            var ex = assertThrows(ContactNotFoundException.class, () -> repository.findByName("Ashish"));
             assertEquals("Contact not found", ex.getMessage(),
                     "Exception message should be 'Contact not found'");
         }
